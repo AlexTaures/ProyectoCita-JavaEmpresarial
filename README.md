@@ -7,3 +7,15 @@
 -- Tipo Cita, Estado Cita
 -- Subservicio, Modalidad, Institucion
 -- Crear las excepciones sobre cupos, paciente y medico no repetible, expediente unico, fecha no valida, cambiocita no permitido, cita vencida
+
+
+Super Clase Persona
+Atributos: idPersona, nombre, apellido, fechaNacimiento, dui, telefono, correo, direccion
+
+Clase Paciente
+hereda de Persona
+Atributos: idPaciente, numeroExpediente, tipoSangre
+
+Clase Medico
+heresa de Persona
+Atributos: idMedico, numeroJunta, poseeEspecialidad, cargo, horarioAtencion
