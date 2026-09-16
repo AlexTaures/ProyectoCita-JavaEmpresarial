@@ -10,12 +10,77 @@
 
 
 Super Clase Persona
-Atributos: idPersona, nombre, apellido, fechaNacimiento, dui, telefono, correo, direccion
+Atributos: idPersona, nombre, apellido, fechaNacimiento, documento, telefono, correo, direccion, condicion
 
 Clase Paciente
 hereda de Persona
 Atributos: idPaciente, numeroExpediente, tipoSangre
 
-Clase Medico
+Clase PersonalMedico
 heresa de Persona
-Atributos: idMedico, numeroJunta, poseeEspecialidad, cargo, horarioAtencion
+Atributos: numeroJunta, poseeEspecialidad, cargo, horarioAtencion, documento
+    SubClase Medico : 
+        SubClase MedicoGeneral : 
+        SubClase MedicoEspecializado : + especialidades
+    SubClase Enfermera : 
+    SubClase Licenciado : 
+    
+
+Clase Expediente
+Atributos: numero, fecha_creacion, estado
+
+Clase Cita
+Atributos: fecha, distribucion, estado, reprogramada
+    SubClase CitaPresencial: + fechaHora
+    SubClase CitaDomiciliar: + direccion
+    SubClase CitaVirtual: + url
+
+Clase Distribucion
+Atributos: medico, rangohora, especialidad
+
+
+Excepciones:
+    TelefonoInvalido
+    CorreoElectronicoInvalido
+
+    PersonaInexistente
+    PersonaFallecida
+    DocumentoPacienteNoDisponible
+    ExpedienteNoDisponible
+    FechaNacimientoInvalida
+
+    MedicoNoDisponible
+    MedicoInexistente
+    DocumentoMedicoNoDisponible
+    NumeroJuntaNoDisponible
+    EspecialidadInexistente
+
+    CitaVencida
+    CitaCancelada
+    CitaReprogramada
+    UrlInvalida
+    HorarioNoValido
+    HorarioNoDisponible
+
+    CargoNoDisonible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
